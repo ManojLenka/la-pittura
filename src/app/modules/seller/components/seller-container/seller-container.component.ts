@@ -37,10 +37,6 @@ export class SellerContainerComponent implements OnInit, OnDestroy {
   openFilterDialog() {
     const dialogRef = this._dialog.open(SellerFilterComponent, {
       panelClass: ['full-screen-modal'],
-      // maxWidth: '100vw',
-      // maxHeight: '100vh',
-      // height: '100%',
-      // width: '100%',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

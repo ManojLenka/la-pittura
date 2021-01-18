@@ -37,7 +37,7 @@ export class PieChartComponent implements OnInit {
 
     var options = {
       // width: 600,
-      title: 'Sales (Categories in 2021)',
+      title: 'Sales by Categories in 2021',
       legend: {
         position: 'bottom',
         alignment: 'center',
