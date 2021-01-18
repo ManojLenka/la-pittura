@@ -1,0 +1,10 @@
+.chart-container {
+  max-width: 50%;
+  width: 100%;
+}
+
+@media screen and (max-width: 599px) {
+  .chart-container {
+    max-width: 100%;
+  }
+}

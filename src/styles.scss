@@ -358,6 +358,11 @@ body {
   }
 }
 
+.chart {
+  width: 100%;
+  min-height: 450px;
+}
+
 .full-screen-modal {
   .mat-dialog-container {
     height: 100%;

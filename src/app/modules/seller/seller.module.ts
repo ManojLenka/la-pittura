@@ -8,6 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { SellerContainerComponent } from './components/seller-container/seller-container.component';
 import { SellerFilterComponent } from './components/seller-filter/seller-filter.component';
+import { GoogleChartModule } from '../google-chart/google-chart.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SellerFilterComponent } from './components/seller-filter/seller-filter.
     SharedModule,
     MatMenuModule,
     MatBottomSheetModule,
+    GoogleChartModule,
   ],
 })
 export class SellerModule {}
