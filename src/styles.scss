@@ -181,21 +181,25 @@ body {
 
 .fixed-header {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1;
   background-color: mat-color($lapittura-ui-accent);
+  transition: top 0.3s;
 }
 
 .fixed-sub-header {
   position: fixed;
-  top: 87px;
+  top: 88px;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1;
   background-color: mat-color($lapittura-ui-accent);
+  transition: top 0.3s;
+  display: block;
 }
 
 .b-padding {
@@ -206,14 +210,18 @@ body {
   padding: 8px 10px 0px 10px;
 }
 
-.fake-header {
-  content: '';
-  height: 87px;
-}
+// .fake-header {
+//   content: '';
+//   height: 87px;
+// }
 
-.fake-sub-header {
-  content: '';
-  height: 54px;
+// .fake-sub-header {
+//   content: '';
+//   height: 54px;
+// }
+
+.m-t-141 {
+  margin-top: 141px;
 }
 
 .fs-16 {

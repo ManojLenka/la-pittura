@@ -8,10 +8,12 @@ import { LoginComponent } from './components/login/login.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   constructor(private _dialog: MatDialog) {}
+
+  ngOnInit() {}
 
   openLoginDialog() {
     const dialogRef = this._dialog.open(LoginComponent);

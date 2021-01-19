@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -27,11 +27,33 @@ export class SellerContainerComponent implements OnInit, OnDestroy {
     private _route: ActivatedRoute,
     private _router: Router,
     private _dialog: MatDialog,
-    private _bottomSheet: MatBottomSheet
+    private _bottomSheet: MatBottomSheet,
+    private _ngZone: NgZone
   ) {}
 
   ngOnInit(): void {
+    this.autoHideHeader();
+
     this.watchRoute();
+  }
+
+  autoHideHeader() {
+    this._ngZone.runOutsideAngular(() => {
+      if (window.innerWidth < 960) {
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+          let currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById('la-header').style.top = '0';
+            document.getElementById('la-subHeader').style.top = '88px';
+          } else {
+            document.getElementById('la-header').style.top = '-88px';
+            document.getElementById('la-subHeader').style.top = '-142px';
+          }
+          prevScrollpos = currentScrollPos;
+        };
+      }
+    });
   }
 
   openFilterDialog() {
