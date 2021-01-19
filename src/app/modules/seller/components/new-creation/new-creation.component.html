@@ -80,12 +80,12 @@
         <form [formGroup]="forthFormGroup" class="mxw-450">
             <ng-template matStepLabel>Add Price</ng-template>
             <mat-form-field class="full-width">
-                <mat-label>Price</mat-label>
+                <mat-label>Price (In Rs)</mat-label>
                 <input matInput type="number" formControlName="price" placeholder="" required>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <mat-label>Discount (In %)</mat-label>
-                <input matInput formControlName="discount" placeholder="" required>
+                <input matInput type="number" formControlName="discount" placeholder="" required>
             </mat-form-field>
             <div fxLayoutGap="10px">
                 <button class="secondary-btn" matStepperPrevious>Back</button>
@@ -95,7 +95,7 @@
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Pics</ng-template>
-        <button class="secondary-btn m-b-16" (click)="onClick()">
+        <button class="secondary-btn" (click)="onClick()">
             Upload
         </button>
         <input type="file" #fileInput id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
@@ -111,7 +111,7 @@
                 </span>
             </li>
         </ul> -->
-        <div fxLayoutGap="10px">
+        <div fxLayoutGap="10px" class="m-t-16">
             <button class="secondary-btn" matStepperPrevious>Back</button>
             <button class="secondary-btn" (click)="stepper.reset()">Reset</button>
             <button class="secondary-btn">Save</button>
