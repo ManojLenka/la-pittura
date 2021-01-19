@@ -1,0 +1,121 @@
+<p>new-creation works!</p>
+<mat-vertical-stepper linear #stepper>
+    <ng-template matStepperIcon="done">
+        <span> &#10003; </span>
+    </ng-template>
+    <ng-template matStepperIcon="edit">
+        <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 0 348 348.76195" width="12px"
+            class="white-icon">
+            <path d="m.382812 348.761719 88.316407-24.824219-64.121094-64.121094zm0 0" />
+            <path
+                d="m304.28125 8.773438c-11.722656-11.699219-30.703125-11.699219-42.425781 0l-13.886719 13.882812 77.351562 78.191406 14.304688-14.296875c11.699219-11.726562 11.699219-30.703125 0-42.429687zm0 0" />
+            <path d="m31.835938 238.789062 77.773437 77.773438 201.570313-201.570312-77.351563-78.191407zm0 0" />
+        </svg>
+    </ng-template>
+    <mat-step [stepControl]="firstFormGroup" editable="false">
+        <form [formGroup]="firstFormGroup" class="mxw-450">
+            <ng-template matStepLabel>Choose Category</ng-template>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category" required>
+                    <mat-option *ngFor="let c of categories" [value]="c">{{categoryMap[c]}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div>
+                <button class="secondary-btn" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" class="mxw-450">
+            <ng-template matStepLabel>About Creation</ng-template>
+            <mat-form-field class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Artist Name</mat-label>
+                <input matInput formControlName="artistName" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description" placeholder="" rows="4" required></textarea>
+            </mat-form-field>
+            <div>
+                <button class="secondary-btn" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup" class="mxw-450">
+            <ng-template matStepLabel>Add Specification</ng-template>
+            <mat-form-field class="full-width">
+                <mat-label>Material</mat-label>
+                <input matInput formControlName="material" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Weight (In gram)</mat-label>
+                <input matInput type="number" formControlName="weight" placeholder="" required>
+            </mat-form-field>
+            <div formGroupName="dimension">
+                <mat-form-field class="full-width">
+                    <mat-label>Height (In cm)</mat-label>
+                    <input matInput type="number" formControlName="h" placeholder="" required>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Width (In cm)</mat-label>
+                    <input matInput type="number" formControlName="w" placeholder="" required>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Depth (In cm)</mat-label>
+                    <input matInput type="number" formControlName="d" placeholder="" required>
+                </mat-form-field>
+            </div>
+            <div fxLayoutGap="10px">
+                <button class="secondary-btn" matStepperPrevious>Back</button>
+                <button class="secondary-btn" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="forthFormGroup">
+        <form [formGroup]="forthFormGroup" class="mxw-450">
+            <ng-template matStepLabel>Add Price</ng-template>
+            <mat-form-field class="full-width">
+                <mat-label>Price</mat-label>
+                <input matInput type="number" formControlName="price" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Discount (In %)</mat-label>
+                <input matInput formControlName="discount" placeholder="" required>
+            </mat-form-field>
+            <div fxLayoutGap="10px">
+                <button class="secondary-btn" matStepperPrevious>Back</button>
+                <button class="secondary-btn" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Pics</ng-template>
+        <button class="secondary-btn m-b-16" (click)="onClick()">
+            Upload
+        </button>
+        <input type="file" #fileInput id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
+            style="display:none;" />
+        <div *ngIf="files?.length > 0">
+            {{ files?.length }} Files selected
+        </div>
+        <!-- <ul>
+            <li *ngFor="let file of files">
+                <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                <span id="file-label">
+
+                </span>
+            </li>
+        </ul> -->
+        <div fxLayoutGap="10px">
+            <button class="secondary-btn" matStepperPrevious>Back</button>
+            <button class="secondary-btn" (click)="stepper.reset()">Reset</button>
+            <button class="secondary-btn">Save</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper>

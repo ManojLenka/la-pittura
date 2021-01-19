@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SellerNavMap } from 'src/app/constants/navigation.constant';
 import { CreationsComponent } from './components/creations/creations.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
+import { NewCreationComponent } from './components/new-creation/new-creation.component';
 import { SellerContainerComponent } from './components/seller-container/seller-container.component';
 
 const routes: Routes = [
@@ -27,6 +28,13 @@ const routes: Routes = [
         component: EarningsComponent,
         data: {
           current: SellerNavMap.Earnings,
+        },
+      },
+      {
+        path: SellerNavMap.New,
+        component: NewCreationComponent,
+        data: {
+          current: SellerNavMap.New,
         },
       },
     ],

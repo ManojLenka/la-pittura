@@ -5,9 +5,11 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LaSortComponent } from './components/la-sort/la-sort.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LaSortComponent],
@@ -19,6 +21,9 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatRadioModule,
     MatExpansionModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,
@@ -29,6 +34,9 @@ import { FormsModule } from '@angular/forms';
     MatRadioModule,
     LaSortComponent,
     MatExpansionModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

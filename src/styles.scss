@@ -107,6 +107,16 @@ body {
   }
 }
 
+.white-icon {
+  fill: mat-color($lapittura-ui-accent);
+  stroke: mat-color($lapittura-ui-accent);
+}
+
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .mw-100 {
   min-width: 100px;
 }

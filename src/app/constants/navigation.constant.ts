@@ -1,9 +1,10 @@
 export const SellerNavMap = {
   Earnings: 'earnings',
   Creations: 'creations',
+  New: 'new',
 };
 
-export const SellerNavs = ['Creations', 'Earnings'];
+export const SellerNavs = ['Creations', 'Earnings', 'New'];
 
 export const SortMap = {
   nf: 'Newest First',
