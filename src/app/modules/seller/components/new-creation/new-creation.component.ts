@@ -46,6 +46,7 @@ export class NewCreationComponent implements OnInit {
     this.forthFormGroup = this._formBuilder.group({
       price: ['', Validators.required],
       discount: ['', Validators.required],
+      quantity: ['', Validators.required],
     });
   }
 
