@@ -32,38 +32,40 @@ export class SellerContainerComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.autoHideHeader();
+    // !Not needed auto hide currently
+    // this.autoHideHeader();
 
     this.watchRoute();
   }
 
-  autoHideHeader() {
-    this._ngZone.runOutsideAngular(() => {
-      if (window.innerWidth < 960) {
-        let prevScrollpos = window.pageYOffset;
-        window.onscroll = function () {
-          let currentScrollPos = window.pageYOffset;
-          if (prevScrollpos > currentScrollPos) {
-            document.getElementById('la-header').style.top = '0';
-            document.getElementById('la-subHeader').style.top = '88px';
-          } else {
-            document.getElementById('la-header').style.top = '-88px';
-            document.getElementById('la-subHeader').style.top = '-142px';
-          }
-          prevScrollpos = currentScrollPos;
-        };
-      }
-    });
-  }
+  // autoHideHeader() {
+  //   this._ngZone.runOutsideAngular(() => {
+  //     if (window.innerWidth < 960) {
+  //       let prevScrollpos = window.pageYOffset;
+  //       window.onscroll = function () {
+  //         let currentScrollPos = window.pageYOffset;
+  //         if (prevScrollpos > currentScrollPos) {
+  //           document.getElementById('la-header').style.top = '0';
+  //           document.getElementById('la-subHeader').style.top = '88px';
+  //         } else {
+  //           document.getElementById('la-header').style.top = '-88px';
+  //           document.getElementById('la-subHeader').style.top = '-142px';
+  //         }
+  //         prevScrollpos = currentScrollPos;
+  //       };
+  //     }
+  //   });
+  // }
 
   openFilterDialog() {
-    const dialogRef = this._dialog.open(SellerFilterComponent, {
-      panelClass: ['full-screen-modal'],
-    });
+    this._bottomSheet.open(SellerFilterComponent);
+    // const dialogRef = this._dialog.open(SellerFilterComponent, {
+    //   panelClass: ['full-screen-modal'],
+    // });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
   openBottomSheet(): void {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
@@ -8,6 +9,7 @@ import {
   CategoryMap,
   QueryParamKey,
 } from 'src/app/constants/navigation.constant';
+import { LaSortComponent } from 'src/app/modules/shared/components/la-sort/la-sort.component';
 
 @Component({
   selector: 'app-seller-filter',
@@ -27,7 +29,8 @@ export class SellerFilterComponent implements OnInit {
   constructor(
     private _router: Router,
     private _route: ActivatedRoute,
-    private _dialogRef: MatDialogRef<SellerFilterComponent>
+    private _bottomSheetRef: MatBottomSheetRef<LaSortComponent>,
+    // private _dialogRef: MatDialogRef<SellerFilterComponent>
   ) {}
 
   ngOnInit(): void {
@@ -64,7 +67,8 @@ export class SellerFilterComponent implements OnInit {
       queryParams: this.queries,
       queryParamsHandling: 'merge',
     });
-    this._dialogRef.close();
+    // this._dialogRef.close();
+    this._bottomSheetRef.dismiss();
   }
 
   clearFilter() {

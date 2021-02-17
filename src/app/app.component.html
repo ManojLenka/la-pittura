@@ -1,17 +1,16 @@
 <header class="fixed-header" id="la-header">
   <section class="la-header h-padding">
-    <section fxLayout="row" fxLayoutAlign="space-between center" class="m-t-16" fxLayoutGap.gt-xs="10px"
-      fxLayoutGap="5px">
+    <section fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap.gt-xs="10px" fxLayoutGap="5px">
       <section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap.gt-xs="10px" fxLayoutGap="5px">
         <section>
           <h1 fxHide.xs>
             <a class="la-family no-decor" href="/">LA PITTURA</a>
           </h1>
-          <h3 fxHide.gt-xs>
+          <h3 fxHide.gt-xs class="m-b-0">
             <a class="la-family no-decor" href="/">LA PITTURA</a>
           </h3>
         </section>
-        <button class="icon-btn m-b-16">
+        <button class="icon-btn" ngClass.gt-xs="m-b-16">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
             x="0px" y="0px" viewBox="0 0 512 512" class="h-24" style="enable-background:new 0 0 512 512;"
             xml:space="preserve">
@@ -30,7 +29,7 @@
           </svg>
         </button>
       </section>
-      <section class="m-b-16" fxLayoutGap.gt-xs="10px" fxLayoutGap="5px">
+      <section ngClass.gt-xs="m-b-16" fxLayoutGap.gt-xs="10px" fxLayoutGap="5px">
         <button class="secondary-btn" (click)="openLoginDialog()" ngClass.xs="fs-14"
           ngClass.gt-xs="fs-16">Login</button>
         <button class="icon-btn">

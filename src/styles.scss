@@ -150,6 +150,10 @@ body {
   font-weight: 500 !important;
 }
 
+.m-b-0 {
+  margin-bottom: 0px !important;
+}
+
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -274,6 +278,11 @@ body {
 
 .action-btn {
   padding: 1px 15px;
+  height: 38px;
+}
+
+.time-slice-btn {
+  padding: 1px 10px;
   height: 38px;
 }
 
@@ -402,6 +411,12 @@ body {
 }
 
 @media screen and (max-width: 599px) {
+  .fixed-sub-header {
+    top: 60px;
+  }
+  .m-t-141 {
+    margin-top: 103px;
+  }
   .full-screen-modal {
     max-width: unset !important;
     width: 100%;

@@ -11,6 +11,7 @@ import { SellerContainerComponent } from './components/seller-container/seller-c
 import { SellerFilterComponent } from './components/seller-filter/seller-filter.component';
 import { GoogleChartModule } from '../google-chart/google-chart.module';
 import { NewCreationComponent } from './components/new-creation/new-creation.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [

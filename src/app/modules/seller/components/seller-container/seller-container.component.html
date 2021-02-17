@@ -90,9 +90,18 @@
                 </section>
             </ng-container>
             <ng-container *ngSwitchCase="sellerNavMap.Earnings">
-                <button class="secondary-btn action-btn active-btn" ngClass.xs="m-l--5 fs-14" ngClass.gt-xs="fs-16">
-                    <span class="v-align-m">Yearly</span>
-                </button>
+                <section>
+                    <button class="secondary-btn time-slice-btn" ngClass.xs="m-l--5 fs-14" ngClass.gt-xs="fs-16">
+                        <span class="v-align-m">Weekly</span>
+                    </button>
+                    <button class="secondary-btn time-slice-btn" ngClass.xs="m-l--5 fs-14" ngClass.gt-xs="fs-16">
+                        <span class="v-align-m">Monthly</span>
+                    </button>
+                    <button class="secondary-btn time-slice-btn active-btn" ngClass.xs="m-l--5 fs-14"
+                        ngClass.gt-xs="fs-16">
+                        <span class="v-align-m">Yearly</span>
+                    </button>
+                </section>
             </ng-container>
         </ng-container>
     </nav>
